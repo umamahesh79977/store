@@ -50,6 +50,42 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // admin.js
+
+function logout() {
+    // Here you would typically:
+    // 1. Clear any admin authentication tokens from localStorage/sessionStorage
+    // 2. Redirect to the login page
+    
+    // Clear admin authentication data
+    localStorage.removeItem('adminToken');
+    sessionStorage.removeItem('adminToken');
+    
+    // Redirect to login page
+    window.location.href = 'login.html'; // Change this to your actual login page URL
+}
+
+// Other existing functions...
+function loadAllOrders() {
+    // Your existing code
+}
+
+function loadOrdersByStatus(status) {
+    // Your existing code
+}
+
+// You might also want to add an event listener for the logout button
+document.addEventListener('DOMContentLoaded', function() {
+    // This ensures the DOM is fully loaded before attaching event listeners
+    
+    // If you prefer to use event listeners instead of inline onclick
+    const logoutBtn = document.querySelector('.btn-danger');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', logout);
+    }
+});
+    </script>
     <script src="admin.js"></script>
 </body>
 </html>
