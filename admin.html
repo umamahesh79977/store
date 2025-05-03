@@ -25,15 +25,6 @@
             border-left: 5px solid #ffc107;
             background-color: rgba(255, 193, 7, 0.05);
         }
-        .status-badge {
-            font-size: 0.9rem;
-            padding: 5px 10px;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
     </style>
 </head>
 <body>
@@ -50,10 +41,12 @@
                 </div>
                 <div class="mt-5">
                     <button id="logout-btn" class="btn btn-danger w-100">Logout</button>
+                    <button id="debug-btn" class="btn btn-info w-100 mt-2">Debug Data</button>
                 </div>
             </div>
             <div class="col-md-9 p-4">
                 <h3 id="section-title">All Orders</h3>
+                <div id="debug-console" class="alert alert-secondary mb-3" style="display: none;"></div>
                 <div id="orders-container" class="row">
                     <!-- Orders will be loaded here -->
                 </div>
@@ -63,9 +56,33 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize sample data if localStorage is empty
+        // Debugging function
+        function debugData() {
+            const debugConsole = document.getElementById('debug-console');
+            debugConsole.style.display = 'block';
+            
+            const orders = getOrders();
+            debugConsole.innerHTML = `
+                <h5>Debug Information</h5>
+                <p><strong>LocalStorage content:</strong> ${localStorage.getItem('orders') || 'Empty'}</p>
+                <p><strong>Parsed orders:</strong> ${JSON.stringify(orders)}</p>
+                <p><strong>Number of orders:</strong> ${orders.length}</p>
+                <button class="btn btn-sm btn-warning" onclick="resetSampleData()">Reset Sample Data</button>
+            `;
+        }
+
+        // Reset sample data
+        function resetSampleData() {
+            localStorage.removeItem('orders');
+            initializeData();
+            loadAllOrders();
+            debugData();
+            alert('Sample data has been reset!');
+        }
+
+        // Initialize data with sample orders if none exists
         function initializeData() {
-            if (!localStorage.getItem('orders')) {
+            if (!localStorage.getItem('orders') || localStorage.getItem('orders') === '[]') {
                 const sampleOrders = [
                     {
                         id: 1001,
@@ -93,100 +110,57 @@
                     }
                 ];
                 localStorage.setItem('orders', JSON.stringify(sampleOrders));
-                console.log('Initialized sample orders data');
+                console.log('Sample data initialized in localStorage');
             }
         }
 
-        // Get all orders from localStorage
+        // Get orders from localStorage
         function getOrders() {
-            const orders = localStorage.getItem('orders');
-            return orders ? JSON.parse(orders) : [];
-        }
-
-        // Update order status and refresh display
-        function updateOrderStatus(orderId, newStatus) {
-            const orders = getOrders();
-            const orderIndex = orders.findIndex(order => order.id === orderId);
-            
-            if (orderIndex !== -1) {
-                orders[orderIndex].status = newStatus;
-                localStorage.setItem('orders', JSON.stringify(orders));
-                refreshOrderDisplay();
-                showStatusAlert(`Order #${orderId} marked as ${newStatus}`, newStatus);
+            try {
+                const orders = localStorage.getItem('orders');
+                return orders ? JSON.parse(orders) : [];
+            } catch (e) {
+                console.error('Error parsing orders:', e);
+                return [];
             }
-        }
-
-        // Refresh the order display based on current filter
-        function refreshOrderDisplay() {
-            const currentFilter = document.getElementById('section-title').textContent;
-            
-            if (currentFilter === 'All Orders') {
-                loadAllOrders();
-            } else if (currentFilter === 'Pending Orders') {
-                loadOrdersByStatus('pending');
-            } else if (currentFilter === 'Accepted Orders') {
-                loadOrdersByStatus('accepted');
-            } else if (currentFilter === 'Rejected Orders') {
-                loadOrdersByStatus('rejected');
-            }
-        }
-
-        // Show status change alert
-        function showStatusAlert(message, status) {
-            const alertDiv = document.createElement('div');
-            alertDiv.className = `alert alert-${status === 'accepted' ? 'success' : 'danger'} alert-dismissible fade show`;
-            alertDiv.role = 'alert';
-            alertDiv.innerHTML = `
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            `;
-            
-            const container = document.getElementById('orders-container');
-            container.parentNode.insertBefore(alertDiv, container);
-            
-            setTimeout(() => {
-                alertDiv.classList.remove('show');
-                setTimeout(() => alertDiv.remove(), 150);
-            }, 3000);
         }
 
         // Display orders in the UI
         function displayOrders(orders) {
             const container = document.getElementById('orders-container');
             
-            if (orders.length === 0) {
+            if (!orders || orders.length === 0) {
                 container.innerHTML = `
                     <div class="col-12">
-                        <div class="alert alert-info">No orders found matching the current filter.</div>
+                        <div class="alert alert-info">No orders found.</div>
                     </div>
                 `;
                 return;
             }
 
             container.innerHTML = orders.map(order => `
-                <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card order-card ${order.status} h-100">
-                        <div class="card-body d-flex flex-column">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card order-card ${order.status}">
+                        <div class="card-body">
                             <h5 class="card-title">Order #${order.id}</h5>
                             <p class="card-text"><strong>Customer:</strong> ${order.customer}</p>
                             <p class="card-text"><strong>Items:</strong> ${order.items.join(', ')}</p>
                             <p class="card-text"><strong>Total:</strong> $${order.total.toFixed(2)}</p>
                             <p class="card-text"><strong>Status:</strong> 
-                                <span class="badge rounded-pill ${getStatusBadgeClass(order.status)}">
+                                <span class="badge ${getStatusBadgeClass(order.status)}">
                                     ${order.status.charAt(0).toUpperCase() + order.status.slice(1)}
                                 </span>
                             </p>
-                            <p class="card-text"><small class="text-muted">Date: ${order.date}</small></p>
-                            
+                            <p class="card-text"><small class="text-muted">${order.date}</small></p>
                             ${order.status === 'pending' ? `
-                            <div class="action-buttons mt-auto">
-                                <button class="btn btn-success btn-sm" 
+                            <div class="d-flex justify-content-between mt-2">
+                                <button class="btn btn-sm btn-success" 
                                     onclick="updateOrderStatus(${order.id}, 'accepted')">
-                                    Accept Order
+                                    Accept
                                 </button>
-                                <button class="btn btn-danger btn-sm" 
+                                <button class="btn btn-sm btn-danger" 
                                     onclick="updateOrderStatus(${order.id}, 'rejected')">
-                                    Reject Order
+                                    Reject
                                 </button>
                             </div>
                             ` : ''}
@@ -194,6 +168,52 @@
                     </div>
                 </div>
             `).join('');
+        }
+
+        // Update order status
+        function updateOrderStatus(orderId, newStatus) {
+            const orders = getOrders();
+            const orderIndex = orders.findIndex(order => order.id === orderId);
+            
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = newStatus;
+                try {
+                    localStorage.setItem('orders', JSON.stringify(orders));
+                    refreshOrderDisplay();
+                    showAlert(`Order #${orderId} has been ${newStatus}`, newStatus === 'accepted' ? 'success' : 'danger');
+                } catch (e) {
+                    console.error('Error saving to localStorage:', e);
+                    showAlert('Failed to update order status', 'danger');
+                }
+            }
+        }
+
+        // Refresh order display based on current filter
+        function refreshOrderDisplay() {
+            const currentFilter = document.getElementById('section-title').textContent;
+            switch(currentFilter) {
+                case 'Accepted Orders': loadOrdersByStatus('accepted'); break;
+                case 'Rejected Orders': loadOrdersByStatus('rejected'); break;
+                case 'Pending Orders': loadOrdersByStatus('pending'); break;
+                default: loadAllOrders();
+            }
+        }
+
+        // Show alert message
+        function showAlert(message, type) {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+            alertDiv.innerHTML = `
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            const container = document.getElementById('orders-container');
+            container.parentNode.insertBefore(alertDiv, container);
+            
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+                setTimeout(() => alertDiv.remove(), 150);
+            }, 3000);
         }
 
         // Helper function for status badge classes
@@ -216,7 +236,7 @@
             document.getElementById('section-title').textContent = statusTitles[status];
             
             const orders = getOrders();
-            const filteredOrders = status === 'all' ? orders : orders.filter(order => order.status === status);
+            const filteredOrders = orders.filter(order => order.status === status);
             displayOrders(filteredOrders);
         }
 
@@ -241,6 +261,7 @@
             
             // Set up event listeners
             document.getElementById('logout-btn').addEventListener('click', logout);
+            document.getElementById('debug-btn').addEventListener('click', debugData);
             document.getElementById('all-orders-btn').addEventListener('click', loadAllOrders);
             document.getElementById('accepted-orders-btn').addEventListener('click', () => loadOrdersByStatus('accepted'));
             document.getElementById('rejected-orders-btn').addEventListener('click', () => loadOrdersByStatus('rejected'));
