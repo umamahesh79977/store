@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Super Market</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" >
+	<link href="css/font-awesome.min.css" rel="stylesheet" >
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/blog.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+<section id="top">
+ <div class="container-xl">
+  <div class="row top_1">
+   <div class="col-md-6">
+    <div class="top_1l">
+	  <ul class="mb-0">
+	  <li class="nav-item dropdown d-table-cell">
+          <a class="dropdown-toggle lang_tab font_12 border-end-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             English
+          </a>
+          <ul class="dropdown-menu drop_1" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"> English</a></li>
+			<li><a class="dropdown-item" href="#"> Hindi</a></li>
+			<li><a class="dropdown-item" href="#"> French</a></li>
+			<li><a class="dropdown-item" href="#"> Japanese</a></li>
+            <li><a class="dropdown-item" href="#"> American</a></li>
+          </ul>
+        </li>
+		<li class="nav-item dropdown d-table-cell">
+          <a class="dropdown-toggle lang_tab font_12" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             USD
+          </a>
+          <ul class="dropdown-menu drop_1 drop_1o" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"> € EUR</a></li>
+			<li><a class="dropdown-item" href="#"> $ USD</a></li>
+          </ul>
+        </li>
+	 </ul>
+	</div>
+   </div>
+   <div class="col-md-6">
+    <div class="top_1r pull-right">
+	  <ul class="mb-0">
+	  <li class="nav-item d-table-cell">
+          <a class="font_12 check_tab bg_oran text-white border-end-0" href="#"><i class="fa fa-check-square align-middle me-1"></i> Checkout </a>
+        </li>
+		<li class="nav-item d-table-cell">
+          <a class="font_12 user_tab" href="#"><i class="fa fa-user"></i> </a>
+        </li>
+	 </ul>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header_top">
+ <div class="container-xl">
+  <div class="row header_top1">
+    <div class="col-md-3">
+     <div class="header_top1l">
+	  <h3 class="mb-0"><a class="col_dark" href="index.html"><i class="fa fa-shopping-cart col_oran fs-1 me-1 align-middle"></i> Super Market <br><span class="col_light">Shopping Here</span></a></h3>
+	 </div>	
+	</div>
+	<div class="col-md-7">
+     <div class="header_top1m">
+	   <select name="categories" class="form-select border-end-0" required="">
+			<option value="">All Categories</option>
+			
+			</select>
+			
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Enter Keywords...">
+				<span class="input-group-btn">
+					<button class="btn btn-primary bg_oran" type="button">
+						Search </button>
+				</span>
+		</div>
+	 </div>	
+	</div>
+	<div class="col-md-2">
+     <div class="header_top1r pull-right">
+       <ul class="mb-0">
+		<li class="nav-item dropdown d-table-cell">
+          <a class="dropdown-toggle lang_tab font_12 col_dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <i class="fa fa-shopping-basket me-1 fs-2 align-middle me-1 col_oran"></i> My Cart
+          </a>
+          <ul class="dropdown-menu drop_cart" aria-labelledby="navbarDropdown">
+						<li>
+						 <div class="drop_1i row">
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1il"><h5>2 ITEMS</h5></div>
+						  </div>
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1il text-end"><h5><a href="cart.html">VIEW CART</a></h5></div>
+						  </div>
+						 </div>
+						 <div class="drop_1i1 row">
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1i1l"><h6 class="fw-bold"><a href="#">Nulla Quis</a> <br> <span class="fw-normal d-inline-block mt-1">1x - $89.00</span></h6></div>
+						  </div>
+						  <div class="col-md-4 col-4">
+						   <div class="drop_1i1r"><a href="#"><img src="img/1.jpg" class="w-100" alt="abc"></a></div>
+						  </div>
+						  <div class="col-md-2 col-2">
+						   <div class="drop_1i1l text-end"><h6> <span><i class="fa fa-remove"></i></span></h6></div>
+						  </div>
+						 </div>
+						 <div class="drop_1i1 row">
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1i1l"><h6 class="fw-bold"><a href="#">Eget Nulla</a> <br> <span class="fw-normal d-inline-block mt-1">1x - $49.00</span></h6></div>
+						  </div>
+						  <div class="col-md-4 col-4">
+						   <div class="drop_1i1r"><a href="#"><img src="img/2.jpg" class="w-100" alt="abc"></a></div>
+						  </div>
+						  <div class="col-md-2 col-2">
+						   <div class="drop_1i1l text-end"><h6> <span><i class="fa fa-remove"></i></span></h6></div>
+						  </div>
+						 </div>
+						 <div class="drop_1i2 row">
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1il"><h5>TOTAL</h5></div>
+						  </div>
+						  <div class="col-md-6 col-6">
+						   <div class="drop_1il text-end"><h5>$138.00</h5></div>
+						  </div>
+						 </div>
+						 <div class="drop_1i3 text-center row">
+						  <div class="col-md-12 col-12">
+						   <h6 class="fw-normal"><a class="button d-block" href="checkout.html">CHECKOUT</a></h6>
+						  </div>
+						 </div>
+						</li>
+					  </ul>
+        </li>
+	  </ul>
+	 </div>	
+	</div>
+  </div>
+ </div>
+</section>
+
+<section id="header" class="bg_dark">
+<nav class="navbar navbar-expand-md navbar-light pt-0 pb-0" id="navbar_sticky">
+  <div class="container-xl">
+    <a class="navbar-brand text-white" href="index.html"><i class="fa fa-shopping-cart col_oran fs-1 me-1 align-middle"></i> Super Market</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-0">
+	    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle act_cat nav_hide" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-navicon me-1"></i> ALL CATEGORIES
+          </a>
+          <ul class="dropdown-menu drop_cat" aria-labelledby="navbarDropdown">
+			<li><a class="dropdown-item" href="#"><i class="fa fa-male me-2 col_oran"></i> Men</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-female me-2 col_oran"></i> Women</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-car me-2 col_oran"></i> Automative</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-television me-2 col_oran"></i> Electronics</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-gift me-2 col_oran"></i> Supplies & Gifts</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-diamond me-2 col_oran"></i> Accessories</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-desktop me-2 col_oran"></i> Computer</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-camera-retro me-2 col_oran"></i> Cameras & Photo</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-book me-2 col_oran"></i> Education</a></li>
+			<li><a class="dropdown-item" href="#"><i class="fa fa-laptop me-2 col_oran"></i> Laptop</a></li>
+			<li><a class="dropdown-item border-0" href="#"><i class="fa fa-shirtsinbulk align-middle me-2 col_oran"></i> Fashion</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="about.html">About </a>
+        </li>
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu drop_2 drop_cat" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="product.html"><i class="fa fa-caret-right me-1 col_oran"></i> Product</a></li>
+            <li><a class="dropdown-item border-0" href="detail.html"><i class="fa fa-caret-right me-1 col_oran"></i> Product Detail</a></li>
+          </ul>
+        </li>
+		
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Blog
+          </a>
+          <ul class="dropdown-menu drop_2 drop_cat" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="blog.html"><i class="fa fa-caret-right me-1 col_oran"></i> Blog</a></li>
+            <li><a class="dropdown-item border-0" href="blog_detail.html"><i class="fa fa-caret-right me-1 col_oran"></i> Blog Detail</a></li>
+          </ul>
+        </li>
+		
+		<li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Pages
+          </a>
+          <ul class="dropdown-menu drop_2 drop_cat" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="cart.html"><i class="fa fa-caret-right me-1 col_oran"></i> Shopping Cart</a></li>
+            <li><a class="dropdown-item border-0" href="checkout.html"><i class="fa fa-caret-right me-1 col_oran"></i> Checkout</a></li>
+          </ul>
+        </li>
+		
+		<li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+		
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
+
+<section id="center" class="center_o pt-3 pb-3 bg_light1">
+ <div class="container-xl">
+  <div class="row center_h1">
+    <div class="col-md-12">
+	 <ul class="mb-0">
+	  <li class="d-inline-block font_13 col_light me-2"><a class="pe-1" href="#">Home</a> |</li> 
+	  <li class="d-inline-block col_oran font_13">Blog Detail</li>
+	 </ul>
+	</div>
+  </div>
+  
+ </div>
+</section>
+
+<section id="blog" class="pt-4 pb-4">
+ <div class="container-xl">
+  <div class="row blog1">
+   <div class="col-md-4">
+     <div class="blog_1l">
+	   <div class="blog_1l1">
+	     <div class="input-group p-1">
+				<input type="text" class="form-control border-0 font_13" placeholder="Search Here">
+				<span class="input-group-btn">
+					<button class="btn btn-primary bg-transparent border-0 fs-6" type="button">
+						<i class="fa fa-search col_oran"></i> </button>
+				</span>
+		</div>
+	   </div>
+	   <div class="blog_1l1 bg_light p-4 rounded mt-4">
+		<h5 class="bg_dark heading text-white text-center mb-4">Categories</h5>
+		<h6 class="font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Business <span class="pull-right">(09)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Consulting <span class="pull-right">(12)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Finance <span class="pull-right">(19)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Corporate <span class="pull-right">(14)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Conference <span class="pull-right">(04)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 mb-0 font_13"><i class="fa fa-caret-right col_oran align-middle me-1"></i> <a href="blog_detail.html">Economics <span class="pull-right">(05)</span></a></h6>
+	   </div>
+	   <div class="blog_1l1 bg_light p-4 rounded mt-4">
+		<h5 class="bg_dark heading text-center text-white mb-4">Popular Posts</h5>
+        <div class="blog_1l1i row">
+		  <div class="col-md-3 col-3">
+		   <div class="blog_1l1il">
+		     <img src="img/37.jpg" class="rounded-circle w-100" alt="abc">
+		   </div>
+		  </div>
+		  <div class="col-md-9 col-9">
+		   <div class="blog_1l1ir">
+		    <h6 class="fw-bold"><a href="blog_detail.html">Business Solution</a></h6>
+		    <h6 class="fw-normal mb-0 col_light font_12">26 may, 2018</h6>
+		   </div>
+		  </div>
+		</div>
+		<div class="blog_1l1i row mt-3">
+		  <div class="col-md-3 col-3">
+		   <div class="blog_1l1il">
+		     <img src="img/36.jpg" class="rounded-circle w-100" alt="abc">
+		   </div>
+		  </div>
+		  <div class="col-md-9 col-9">
+		   <div class="blog_1l1ir">
+		    <h6 class="fw-bold"><a href="blog_detail.html">Business Growth</a></h6>
+		    <h6 class="fw-normal mb-0 col_light font_12">26 may, 2018</h6>
+		   </div>
+		  </div>
+		</div>
+		<div class="blog_1l1i row mt-3 border-0 pb-0">
+		  <div class="col-md-3 col-3">
+		   <div class="blog_1l1il">
+		     <img src="img/35.jpg" class="rounded-circle w-100" alt="abc">
+		   </div>
+		  </div>
+		  <div class="col-md-9 col-9">
+		   <div class="blog_1l1ir">
+		    <h6 class="fw-bold"><a href="blog_detail.html">Business Consult</a></h6>
+		    <h6 class="fw-normal mb-0 col_light font_12">26 may, 2018</h6>
+		   </div>
+		  </div>
+		</div>
+	   </div>
+	   <div class="blog_1l1 bg_light p-4 rounded mt-4">
+		<h5 class="bg_dark heading text-white text-center mb-4">Archives</h5>
+		<h6 class="font_13"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">June 24, 2021 <span class="pull-right">(09)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">July 24, 2021 <span class="pull-right">(12)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">May 24, 2021 <span class="pull-right">(19)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">Oct 24, 2021 <span class="pull-right">(14)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">Aug 24, 2021 <span class="pull-right">(04)</span></a></h6>
+		<hr>
+		<h6 class="mt-3 font_13 mb-0"><i class="fa fa-calendar col_oran align-middle me-2 font_12"></i> <a href="blog_detail.html">Nov 24, 2021 <span class="pull-right">(05)</span></a></h6>
+	   </div>
+	   <div class="blog_1l1 bg_light p-4 rounded mt-4">
+		<h5 class="bg_dark heading text-white mb-4 text-center">Tags</h5>
+        <ul class="mb-0">
+		 <li class="d-inline-block"><a href="blog_detail.html">Consulting</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Finance</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Law</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Corporate</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Taxes</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Meeting</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Business</a></li>
+		 <li class="d-inline-block"><a href="blog_detail.html">Investment</a></li>
+		</ul>
+	   </div>
+	 </div>
+   </div>
+   <div class="col-md-8">
+     <div class="blog_1r">
+	   <div class="blog_1r1 border-0 p-0">
+	       <div class="grid clearfix">
+		  <figure class="effect-jazz mb-0">
+			<a href="blog_detail.html"><img src="img/40.jpg" class="w-100" alt="img25"></a>
+		  </figure>
+	  </div>
+	       <ul class="mt-3">
+			<li class="d-inline-block me-3 font_13"><a href="blog_detail.html"><i class="fa fa-user col_oran me-1"></i> Eget Nulla</a></li>
+			<li class="d-inline-block me-3 font_13"><a href="blog_detail.html"><i class="fa fa-calendar col_oran me-1"></i> May 27, 2018</a></li>
+			<li class="d-inline-block me-3 font_13"><a href="blog_detail.html"><i class="fa fa-file col_oran me-1"></i>  Shopping</a></li>
+			<li class="d-inline-block font_13"><a href="blog_detail.html"><i class="fa fa-comments col_oran me-1"></i> 6 Comment</a></li>
+			</ul>
+	       <h5><a href="#">Tech Entrepreneur Credits Paper For Success</a></h5>
+		   <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type Remaining Essentially Unchanged. It Was Popularised In The 1960s With The Release Of Letraset Sheets Containing.</p>
+	   </div>
+	   <div class="blog_1rdt2 mt-4">
+			<blockquote class="blockquote bg_light p-4">
+									<p>Provident fugiat tempora architecto mollitia quos maiores perspiciatis obcaecati placeat aunty koi thako Architecto eaque accusamus minima in earum impedit atque</p>
+									<h6 class="fw-normal mb-0"><strong>- Dapibus Diam </strong>of Google Inc.</h6>
+								</blockquote>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus dolor eaque officia impedit corporis exercitationem vel nulla iure sequi ipsam.</p>	
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem rerum voluptas harum provident fugiat tempora architecto mollitia quos maiores perspiciatis, obcaecati, placeat aut. Architecto eaque accusamus minima quis in earum dignissimos suscipit esse, saepe repudiandae similique, expedita sed quam dolore impedit deleniti atque.
+</p>		
+    <hr>	
+	    <div class="blog_1rdt2i row">
+		 <div class="col-md-7">
+		  <div class="blog_1rdt2il">
+		    <h5>Related Tags:</h5>
+			<ul class="mb-0">
+		 <li class="d-inline-block"><a href="#">Consulting</a></li>
+		 <li class="d-inline-block"><a href="#">Finance</a></li>
+		 <li class="d-inline-block"><a href="#">Corporate</a></li>
+		</ul>
+		  </div>
+		 </div>
+		 <div class="col-md-5">
+		  <div class="blog_1rdt2ir text-end">
+		   <h5>Social Share:</h5>
+		   <ul class="social-network social-circle mb-0">
+					<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-pinterest"></i></a></li>
+					<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+		  </div>
+		 </div>
+		</div>	
+	   </div><hr>
+	   <div class="blog_1rdt3 mt-4">
+	    <h5>Recent post</h5>
+		<div class="blog_1ri row mt-3">
+		<div class="col-md-6">
+         <div class="blog_1r1">
+	       <div class="grid clearfix">
+		  <figure class="effect-jazz mb-0">
+			<a href="blog_detail.html"><img src="img/40.jpg" height="260" class="w-100" alt="img25"></a>
+		  </figure>
+	  </div>
+	       <ul class="mt-3">
+			<li class="d-inline-block me-2 font_13"><a href="blog_detail.html"><i class="fa fa-user col_oran me-1"></i> Eget Nulla</a></li>
+			<li class="d-inline-block me-2 font_13"><a href="blog_detail.html"><i class="fa fa-calendar col_oran me-1"></i> May 27, 2018</a></li>
+			<li class="d-inline-block font_13"><a href="blog_detail.html"><i class="fa fa-comments col_oran me-1"></i> 6 Comment</a></li>
+			</ul>
+	       <h5><a href="#">Tech Entrepreneur Credits Paper For Success</a></h5>
+		   <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type Remaining Essentially Unchanged. It Was Popularised In The 1960s With The Release Of Letraset Sheets Containing.</p>
+		   <h6><a class="button_1" href="#">Read More</a></h6>
+	   </div>
+		</div>
+		<div class="col-md-6">
+         <div class="blog_1r1">
+	       <div class="grid clearfix">
+		  <figure class="effect-jazz mb-0">
+			<a href="blog_detail.html"><img src="img/39.jpg" height="260" class="w-100" alt="img25"></a>
+		  </figure>
+	  </div>
+	       <ul class="mt-3">
+			<li class="d-inline-block me-2 font_13"><a href="blog_detail.html"><i class="fa fa-user col_oran me-1"></i> Eget Nulla</a></li>
+			<li class="d-inline-block me-2 font_13"><a href="blog_detail.html"><i class="fa fa-calendar col_oran me-1"></i> May 27, 2018</a></li>
+			<li class="d-inline-block font_13"><a href="blog_detail.html"><i class="fa fa-comments col_oran me-1"></i> 6 Comment</a></li>
+			</ul>
+	       <h5><a href="#">Tech Entrepreneur Credits Paper For Success</a></h5>
+		   <p>Lorem Ipsum Is Simply Dummy Text Of The Printing And Typesetting Industry. Lorem Ipsum Has Been The Industry's Standard Dummy Text Ever Since The 1500s, When An Unknown Printer Took A Galley Of Type Remaining Essentially Unchanged. It Was Popularised In The 1960s With The Release Of Letraset Sheets Containing.</p>
+		   <h6><a class="button_1" href="#">Read More</a></h6>
+	   </div>
+		</div>
+		
+		</div>
+	   </div>
+	   
+	   <div class="blog_1rdt3 mt-4 bg_light p-4">
+	    <div class="blog_1rdt3it row">
+		 <div class="col-md-12">
+		  <h5 class="mb-4">(03) Comments:</h5>
+		 </div> 
+		</div>
+	    <div class="blog_1rdt3i row">
+		 <div class="col-md-2 col-sm-2">
+		  <div class="blog_1rdt3il">
+		   <img src="img/37.jpg" class="w-100 rounded-circle" alt="abc">
+		  </div>
+		 </div>
+		 <div class="col-md-10 col-sm-10">
+		  <div class="blog_1rdt3il">
+		   <h6 class="fw-bold">Eget Nulla <span class="pull-right"><a class="button pt-2 pb-2 ps-3 pe-3 font_14 fw-normal" href="#">Reply</a></span></h6>
+		   <h6 class="fw-normal mt-3 font_12"><a class="col_light " href="#"><i class="fa fa-calendar col_oran me-1"></i> 03 Feb, 2022</a> <a class="col_light " href="#"><i class="fa fa-user col_oran me-1 ms-3"></i> Admin</a> <a class="col_light " href="#"><i class="fa fa-comments col_oran me-1 ms-3"></i> 3 Comments</a></h6>
+		   <p class="mb-0 font_12">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown type specimen book.</p>
+		  </div>
+		 </div>
+		</div><hr>
+		<div class="blog_1rdt3i row">
+		 <div class="col-md-2 col-sm-2">
+		  <div class="blog_1rdt3il">
+		   <img src="img/35.jpg" class="w-100 rounded-circle" alt="abc">
+		  </div>
+		 </div>
+		 <div class="col-md-10 col-sm-10">
+		  <div class="blog_1rdt3il">
+		  <h6 class="fw-bold">Semper Porta <span class="pull-right"><a class="button pt-2 pb-2 ps-3 pe-3 font_14 fw-normal" href="#">Reply</a></span></h6>
+		   <h6 class="fw-normal mt-3 font_12"><a class="col_light " href="#"><i class="fa fa-calendar col_oran me-1"></i> 03 Feb, 2022</a> <a class="col_light " href="#"><i class="fa fa-user col_oran me-1 ms-3"></i> Admin</a> <a class="col_light " href="#"><i class="fa fa-comments col_oran me-1 ms-3"></i> 3 Comments</a></h6>
+		   <p class="mb-0 font_12">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown type specimen book.</p>
+		  </div>
+		 </div>
+		</div><hr>
+		<div class="blog_1rdt3i row">
+		 <div class="col-md-2 col-sm-2">
+		  <div class="blog_1rdt3il">
+		   <img src="img/36.jpg" class="w-100 rounded-circle" alt="abc">
+		  </div>
+		 </div>
+		 <div class="col-md-10 col-sm-10">
+		  <div class="blog_1rdt3il">
+		    <h6 class="fw-bold">Nulla Quis <span class="pull-right"><a class="button pt-2 pb-2 ps-3 pe-3 font_14 fw-normal" href="#">Reply</a></span></h6>
+		   <h6 class="fw-normal mt-3 font_12"><a class="col_light " href="#"><i class="fa fa-calendar col_oran me-1"></i> 03 Feb, 2022</a> <a class="col_light " href="#"><i class="fa fa-user col_oran me-1 ms-3"></i> Admin</a> <a class="col_light " href="#"><i class="fa fa-comments col_oran me-1 ms-3"></i> 3 Comments</a></h6>
+		   <p class="mb-0 font_12">Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown type specimen book.</p>
+		  </div>
+		 </div>
+		</div><hr>
+		<div class="blog_1rdt3it row">
+		 <div class="col-md-12">
+		  <h5 class="mb-4">Leave a Reply:</h5>
+		 </div> 
+		</div>
+		<div class="blog_1rdt3i2 row">
+		 <div class="col-md-6">
+		  <div class="blog_1rdt3i2l">
+		    <input class="form-control" placeholder="Name" type="text">
+		  </div>
+		 </div> 
+		 <div class="col-md-6">
+		  <div class="blog_1rdt3i2l">
+		    <input class="form-control" placeholder="Email" type="text">
+		  </div>
+		 </div>
+		</div>
+		<div class="blog_1rdt3i2 row mt-3">
+		 <div class="col-md-6">
+		  <div class="blog_1rdt3i2l">
+		    <input class="form-control" placeholder="Subject" type="text">
+		  </div>
+		 </div> 
+		 <div class="col-md-6">
+		  <div class="blog_1rdt3i2l">
+		    <input class="form-control" placeholder="Website" type="text">
+		  </div>
+		 </div>
+		</div>
+		<div class="blog_1rdt3i2 row mt-3">
+		 <div class="col-md-12">
+		  <div class="blog_1rdt3i2l">
+		    <textarea placeholder="Message" class="form-control form_text"></textarea>
+			<h6 class="mt-3 mb-0"><a class="button" href="#">POST COMMENT</a></h6>
+		  </div>
+		 </div> 
+		</div>
+	   </div>
+	   
+	 </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="footer_top" class="bg_dark mt-1">
+ <div class="container-xl">
+  <div class="row footer_top1">
+   <div class="col-md-4">
+    <div class="footer_top1l bg_dark">
+	  <ul class="social-network social-circle mb-0">
+					<li class="me-2"><a href="#" class="icoRss" title="Rss"><i class="fa fa-skype"></i></a></li>
+					<li class="me-2"><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+					<li class="me-2"><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+					<li class="me-2"><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+	</div>
+   </div>
+   <div class="col-md-3">
+    <div class="footer_top1m ">
+	  <h5 class="mb-0 text-white">SIGN UP FOR NEWSLETTER</h5>
+	</div>
+   </div>
+   <div class="col-md-5">
+    <div class="footer_top1r text-center">
+ <div class="input-group">
+				<input type="text" class="form-control" placeholder="Enter your email">
+				<span class="input-group-btn">
+					<button class="btn btn-primary bg_oran" type="button">
+						SUBSCRIBE </button>
+				</span>
+		</div>
+	</div>
+   </div>
+  </div>   
+ </div>
+</section>
+
+<section id="footer_middle" class="bg_light">
+ <div class="container-xl">
+   <div class="footer_middle1 row">
+    <div class="col-md-4">
+     <div class="footer_middle1i bg_1 ps-4 pe-4">
+	  <h5 class="mb-3">CONTACT US</h5>
+	  <div class="footer_middle1ii row">
+	   <div class="col-md-2 pe-0 col-2">
+	    <div class="footer_middle1iil">
+		 <span class="bg_dark d-inline-block rounded-circle text-center text-white"><i class="fa fa-map-marker"></i></span>
+		</div>
+	   </div>
+	   <div class="col-md-10 ps-0 col-10">
+	    <div class="footer_middle1iir">
+		 <p class="mb-0"><span class="fw-bold">Address:</span> 36 Nora Dreek, stable novel, Old East Hales 2360, India</p>
+		</div>
+	   </div>
+	  </div>
+	  <div class="footer_middle1ii row mt-3">
+	   <div class="col-md-2 pe-0 col-2">
+	    <div class="footer_middle1iil">
+		 <span class="bg_dark d-inline-block rounded-circle text-center text-white"><i class="fa fa-envelope"></i></span>
+		</div>
+	   </div>
+	   <div class="col-md-10 ps-0 col-10">
+	    <div class="footer_middle1iir">
+		 <p class="mb-0 mt-2"><span class="fw-bold">Email:</span> <a href="#">info@gmail.com</a></p>
+		</div>
+	   </div>
+	  </div>
+	  <div class="footer_middle1ii row mt-3">
+	   <div class="col-md-2 pe-0 col-2">
+	    <div class="footer_middle1iil">
+		 <span class="bg_dark d-inline-block rounded-circle text-center text-white"><i class="fa fa-phone"></i></span>
+		</div>
+	   </div>
+	   <div class="col-md-10 ps-0 col-10">
+	    <div class="footer_middle1iir">
+		 <p class="mb-0 mt-2"><span class="fw-bold">Phone:</span> +123 123 456</p>
+		</div>
+	   </div>
+	  </div>
+	 </div>	
+	</div>
+	<div class="col-md-3">
+     <div class="footer_middle1i">
+	  <h5 class="mb-3">INFORMATION</h5>
+	  <div class="row">
+	   <h6 class="col-md-12 col-6"><a href="#">About Us</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">My Account</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Privacy Polices</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Terms & Conditions</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Delivery Information</a></h6>
+	   <h6 class="mb-0 col-md-12 col-6"><a href="#">Customer Feedback</a></h6>
+	  </div>
+	   
+	 </div>	
+	</div>
+	<div class="col-md-3">
+     <div class="footer_middle1i">
+	  <h5 class="mb-3">CUSTOMER SERVICE</h5>
+	   <div class="row">
+	    <h6 class="col-md-12 col-6"><a href="#">Gift Cards</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">F21 Red</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Privacy Policy</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Teams of Use</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Track your order</a></h6>
+	   <h6 class="mb-0 col-md-12 col-6"><a href="#">Gift Cards</a></h6>
+	  </div>
+	 </div>	
+	</div>
+	<div class="col-md-2">
+     <div class="footer_middle1i">
+	  <h5 class="mb-3">PAYMENT & SHIPPING</h5>
+	    <div class="row">
+	    <h6 class="col-md-12 col-6"><a href="#">Contact Us</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">About Us</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Shipping Guide</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Estimated Delivery Time</a></h6>
+	   <h6 class="col-md-12 col-6"><a href="#">Payment Methods</a></h6>
+	   <h6 class="mb-0 col-md-12 col-6"><a href="#">Return Policy</a></h6>
+	  </div>
+	 </div>	
+	</div>
+   </div>
+ </div>
+</section>
+
+<section id="footer_b" class="pt-2 pb-2">
+ <div class="container-xl">
+  <div class="row footer_b1 text-center">
+   <div class="col-md-12">
+     <p class="mb-0 font_13">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_oran" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+   </div>   
+  </div>
+ </div>
+</section>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar_sticky = document.getElementById("navbar_sticky");
+var sticky = navbar_sticky.offsetTop;
+var navbar_height = document.querySelector('.navbar').offsetHeight;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky + navbar_height) {
+    navbar_sticky.classList.add("sticky")
+	document.body.style.paddingTop = navbar_height + 'px';
+  } else {
+    navbar_sticky.classList.remove("sticky");
+	document.body.style.paddingTop = '0'
+  }
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+/*
+Template Name: Super Market
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************blog****************/
+.blog_1l1 .input-group {
+border: 1px solid #ff55001c;
+}
+.heading{
+padding:10px 15px 10px 15px; 
+ }
+.blog_1l1i{
+border-bottom:1px solid #ff55001c;
+padding-bottom:15px;
+ }
+.blog_1l1 ul li a {
+background: #fff;
+color: #333;
+margin-right: 10px;
+padding: 8px 16px 8px 16px;
+border-radius: 6px;
+display: inline-block;
+margin-top:7px;
+margin-bottom:7px;
+font-size:13px;
+}
+.blog_1l1 ul li a:hover {
+background: #f50;
+color:#fff;
+}
+.blog_1r1{
+border:1px solid #ff55001c;
+padding:10px; 
+ }
+
+.blockquote{
+border-left:5px solid  #f50; 
+ }
+.blog_1rdt2il ul li a {
+background:#f3f4f8;
+color: #333;
+margin-right: 5px;
+padding: 8px 16px 8px 16px;
+border-radius: 6px;
+display: inline-block;
+margin-top:7px;
+margin-bottom:7px;
+font-size:13px;
+}
+.blog_1rdt2il ul li a:hover {
+background:#f50;
+color:#fff;
+}
+.blog_1rdt2ir ul li a{
+background:#4a5678;
+ }
+.blog_1rdt3i2l .form-control{
+height:45px; 
+font-size:13px;
+ }
+.blog_1rdt3i2l .form_text{
+height:140px; 
+ }
+/*********************blog_end****************/
+
+
+@media screen and (max-width : 767px){
+.heading {
+text-align:center;
+}
+.blog_1l{
+margin-bottom:20px; 
+ }
+.blog_1rdt1 img{
+height:auto; 
+ }
+.blog_1rdt2{
+text-align:center; 
+ }
+.blog_1rdt2 p{
+text-align:left; 
+ }
+.blog_1rdt2ir {
+text-align:center!important;
+margin-top:15px; 
+ }
+.blog_1rdt3 {
+text-align:center; 
+ }
+.blog_h1i2 {
+text-align:left;  
+ }
+.blog_1rdt3 p{
+text-align:left;  
+ }
+.blog_1rdt3il{
+margin-top:15px; 
+ }
+.blog_1rdt3i2l .form-control{
+margin-top:15px; 
+ }
+.blog_1rdt3i2 {
+margin-top:0!important; 
+ }
+.blog_1rdt3it  h2{
+margin-bottom:0!important;  
+ }
+.blog_1rdt3il h4{
+text-align:left; 
+ }
+ 
+.blog_1r1 h6{
+text-align:center; 
+ }
+
+.blog_1r1{
+margin-top:10px; 
+ }
+.blog_1rdt3il img{
+width:auto!important;
+margin-bottom:15px;
+ }
+.blog_1rdt3il{
+text-align:center;
+ }
+.blog_1rdt3il h5{
+text-align:left;
+ }
+.blog_1rdt3il p{
+text-align:left;
+ }
+.blog_1rdt3il h6{
+text-align:left;
+margin-top:25px!important;
+ }
+ }
+
+
+@media (min-width:576px) and (max-width:767px) {
+.blog_1rdt3il img{
+width:100%!important;
+margin-bottom:0;
+ }
+.blog_1rdt3il{
+text-align:left;
+ }
+.blog_1rdt3il h6{
+text-align:left;
+margin-top:0!important;
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+
+
+ }
+
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1235px) {
+
+ }
+
+
