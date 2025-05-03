@@ -37,7 +37,7 @@
                     <button class="btn btn-outline-warning w-100 mb-2" onclick="loadOrdersByStatus('pending')">Pending Orders</button>
                 </div>
                 <div class="mt-5">
-                    <button class="btn btn-danger w-100" onclick="logout()">Logout</button>
+                    <button id="logout-btn" class="btn btn-danger w-100">Logout</button>
                 </div>
             </div>
             <div class="col-md-9 p-4">
@@ -51,41 +51,62 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // admin.js
+        // Admin panel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to logout?')) {
+                    // Clear authentication data
+                    localStorage.removeItem('adminToken');
+                    sessionStorage.removeItem('adminToken');
+                    
+                    // Clear cookies (if used)
+                    document.cookie = 'adminToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+                    
+                    // Redirect to login page
+                    window.location.href = 'login.html';
+                }
+            });
+            
+            // Initial load of orders
+            loadAllOrders();
+        });
 
-function logout() {
-    // Here you would typically:
-    // 1. Clear any admin authentication tokens from localStorage/sessionStorage
-    // 2. Redirect to the login page
-    
-    // Clear admin authentication data
-    localStorage.removeItem('adminToken');
-    sessionStorage.removeItem('adminToken');
-    
-    // Redirect to login page
-    window.location.href = 'login.html'; // Change this to your actual login page URL
-}
+        function loadAllOrders() {
+            document.getElementById('section-title').textContent = 'All Orders';
+            // Fetch and display all orders
+            fetchOrders(null);
+        }
 
-// Other existing functions...
-function loadAllOrders() {
-    // Your existing code
-}
+        function loadOrdersByStatus(status) {
+            const statusTitles = {
+                'accepted': 'Accepted Orders',
+                'rejected': 'Rejected Orders',
+                'pending': 'Pending Orders'
+            };
+            document.getElementById('section-title').textContent = statusTitles[status];
+            // Fetch and display orders by status
+            fetchOrders(status);
+        }
 
-function loadOrdersByStatus(status) {
-    // Your existing code
-}
+        function fetchOrders(status) {
+            // This would be your actual API call to get orders
+            console.log(`Fetching orders with status: ${status || 'all'}`);
+            // Implement your actual fetch logic here
+            // Example:
+            /*
+            fetch(`/api/orders${status ? '?status=' + status : ''}`)
+                .then(response => response.json())
+                .then(data => displayOrders(data))
+                .catch(error => console.error('Error:', error));
+            */
+        }
 
-// You might also want to add an event listener for the logout button
-document.addEventListener('DOMContentLoaded', function() {
-    // This ensures the DOM is fully loaded before attaching event listeners
-    
-    // If you prefer to use event listeners instead of inline onclick
-    const logoutBtn = document.querySelector('.btn-danger');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', logout);
-    }
-});
+        function displayOrders(orders) {
+            const container = document.getElementById('orders-container');
+            container.innerHTML = '';
+            // Implement your order display logic here
+        }
     </script>
-    <script src="admin.js"></script>
 </body>
 </html>
