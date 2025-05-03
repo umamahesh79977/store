@@ -80,11 +80,11 @@
                 checkAuth(); // Verify clearance
                 
                 // Redirect to login page
-                window.location.href = 'login.html';
+                window.location.href = 'admin.html';
                 
                 // Fallback in case redirect fails
                 setTimeout(() => {
-                    window.location.href = 'login.html';
+                    window.location.href = 'admin.html';
                 }, 1000);
             } catch (error) {
                 console.error('Logout error:', error);
